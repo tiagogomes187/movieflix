@@ -1,0 +1,30 @@
+.main-nav{
+    min-height: 68px;
+    padding-left: 49px;
+}
+
+.nav-logo-text,
+.nav-logo-text:hover {
+  color: #000000;
+}
+
+.main-menu {
+  display: flex;
+  width: 83.48px;
+  justify-content: space-between;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 19px;
+  letter-spacing: -0.015em;
+  text-align: center;
+}
+
+.main-menu a {
+  color: #000000;
+}
+
+.main-menu a:hover {
+  color: #ffffff;
+}
+
