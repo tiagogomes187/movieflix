@@ -1,14 +1,10 @@
+import Home from 'pages/Home';
+
 import './assets/styles/custom.scss';
 import './App.css';
-import Navbar from './components/Navbar';
 
-const App = () => {
-  return (
-    <>
-      <Navbar />
-      <h1>Hello MovieFlix</h1>;
-    </>
-  );
-};
+function App() {
+  return <Home />;
+}
 
 export default App;
