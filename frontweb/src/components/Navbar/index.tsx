@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './styles.css';
 
 const Navbar = () => {
@@ -5,9 +6,9 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-md bg-primary main-nav">
         <div className="container-fluid">
-          <a href="/" className="nav-logo-text">
+          <NavLink to="/" activeClassName='active' exact className="nav-logo-text">
             <h4>MovieFlix</h4>
-          </a>
+          </NavLink>
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav offset-md-2 main-menu">
               <li>

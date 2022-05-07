@@ -6,7 +6,7 @@
 }
 
 .home-card {
-  display: flex;
+  display: none;
   flex-direction: column;
   border: 1px solid orange;
 }
@@ -36,6 +36,14 @@
 .home-image-container svg {
   width: 100%;
   height: auto;
+}
+
+.card-login {
+  border: 1px solid rgb(60, 255, 0);
+}
+
+.card-login h1 {
+  color: aqua;
 }
 
 @media (min-width: 576px) {
@@ -76,12 +84,49 @@
 
 @media (min-width: 1200px) {
   .home-container {
-    padding: 81px 749px 111px 70px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    padding-right: 0;
+    padding-left: 70px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .home-card {
+    display: flex;
+    justify-content: center;
+    margin-right: 149px;
+  }
+
+  .card-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 479px;
+    height: 573px;
   }
 }
 
 @media (min-width: 1400px) {
   .home-container {
-    padding: 81px 949px 415px 70px;
+    padding-top: 40px;
+    padding-bottom: 38px;
+    padding-right: 0;
+    padding-left: 70px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .home-card {
+    display: flex;
+    justify-content: center;
+    margin-right: 338px;
+  }
+
+  .card-login {
+    display: flex;
+    align-items: center;
+    width: 479px;
+    height: 573px;
   }
 }
