@@ -1,0 +1,45 @@
+.movie-details-container {
+
+    padding: 10px;
+    border: 1px solid red;
+}
+
+.movie-details-card {
+    padding: 20px;
+    border: 1px solid blue;
+}
+
+.img-container {
+    text-align: center;
+    margin-bottom: 18px;
+    border: 1px solid rgb(228, 224, 11);
+}
+
+.img-container img {
+    width: 100%;
+}
+
+.title-subtitle-container {
+    margin-bottom: 16px;
+    color: white;
+    border: 1px solid rgb(1, 148, 216);
+}
+
+.title-subtitle-container h1 {
+    font-size: 20px;
+    letter-spacing: -0.015em;
+}
+
+.title-subtitle-container h6 {
+    font-size: 16px;
+    color: #FFC700;
+}
+
+.title-subtitle-container p {
+    font-size: 14px;
+}
+
+.sinopse-container {
+    border: 1px solid rgb(148, 5, 192);
+    color: #9E9E9E;
+}
