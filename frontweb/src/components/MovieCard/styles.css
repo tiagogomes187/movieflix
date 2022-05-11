@@ -1,6 +1,5 @@
 .movie-card {
   margin-bottom: 20px;
-  width: 300px;
   align-items: center;
   border: 1px solid red;
 }
@@ -11,12 +10,11 @@
 }
 
 .card-top-container img {
-    width: 295px;
-    height: 165px;
-  }
+  width: 100%;
+}
 
 .card-bottom-container {
-    padding: 11px 18px 53px;
+  padding: 0px 18px 53px;
 }
 
 .card-bottom-container h6 {
