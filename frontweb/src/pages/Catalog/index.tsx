@@ -1,4 +1,5 @@
 import MovieCard from 'components/MovieCard';
+import Pagination from 'components/Pagination';
 import { Link } from 'react-router-dom';
 import { Movie } from 'types/movie';
 
@@ -44,6 +45,11 @@ const Catalog = () => {
           </Link>
         </div>
       </div>
+
+      <div className="row">
+        <Pagination />
+      </div>
+
     </div>
   );
 };
