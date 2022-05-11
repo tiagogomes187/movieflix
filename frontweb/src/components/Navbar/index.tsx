@@ -6,10 +6,15 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-md bg-primary main-nav">
         <div className="container-fluid">
-          <NavLink to="/" activeClassName='active' exact className="nav-logo-text">
+          <NavLink
+            to="/"
+            activeClassName="active"
+            exact
+            className="nav-logo-text"
+          >
             <h4>MovieFlix</h4>
           </NavLink>
-          <div className="collapse navbar-collapse">
+          <div className="menu-sair">
             <ul className="navbar-nav offset-md-2 main-menu">
               <li>
                 <a href="link">Sair</a>

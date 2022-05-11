@@ -1,23 +1,31 @@
-.main-nav{
-    min-height: 68px;
-    padding-left: 49px;
+.main-nav {
+  min-height: 68px;
+  padding-left: 18px;
 }
 
-.nav-logo-text,
+.nav-logo-text h4{
+  font-size: 24px;
+}
+
 .nav-logo-text:hover {
   color: #000000;
 }
 
+.menu-sair{
+  margin-right: 10px;
+}
+
 .main-menu {
   display: flex;
-  width: 83.48px;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 14px;
-  font-style: normal;
   font-weight: bold;
-  line-height: 19px;
-  letter-spacing: -0.015em;
   text-align: center;
+  text-transform: uppercase;
+  width: 100px;
+  height: 30px;
+  border: 1px solid #000000;
+  border-radius: 10px;
 }
 
 .main-menu a {
@@ -28,3 +36,14 @@
   color: #ffffff;
 }
 
+@media (min-width: 576){
+  .menu-sair{
+    margin-right: 23px;
+  }
+}
+
+@media (min-width: 768){
+  .menu-sair{
+    margin-right: 40px;
+  }
+}
