@@ -2,18 +2,17 @@
   padding: 20px 10px 33px;
   font-size: 36px;
   text-align: left;
-  border: 1px solid red;
 }
 
 .home-card {
   display: none;
   flex-direction: column;
-  border: 1px solid orange;
+
 }
 
 .home-content-container {
   padding-left: 25px;
-  border: 1px solid blue;
+
 }
 
 .home-content-container h1 {
@@ -30,20 +29,12 @@
 
 .home-image-container {
   padding: 0;
-  border: 1px solid purple;
+
 }
 
 .home-image-container svg {
   width: 100%;
   height: auto;
-}
-
-.card-login {
-  border: 1px solid rgb(60, 255, 0);
-}
-
-.card-login h1 {
-  color: aqua;
 }
 
 @media (min-width: 576px) {
@@ -64,6 +55,7 @@
     width: 320px;
     font-size: 22px;
   }
+
   .home-image-container svg {
     width: 380px;
     height: auto;

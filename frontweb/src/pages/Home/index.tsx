@@ -1,4 +1,5 @@
 import { ReactComponent as BannerImage } from 'assets/images/banner.svg';
+import Login from './Auth/Login';
 
 import './styles.css';
 
@@ -14,9 +15,8 @@ const Home = () => {
           <BannerImage />
         </div>
       </div>
-      <div className="card-login base-card">
-        <h1>Card Login</h1>
-        <p>Chamar o card de Login aqui.</p>
+      <div className="card-login">
+        <Login/>
       </div>
     </div>
   );

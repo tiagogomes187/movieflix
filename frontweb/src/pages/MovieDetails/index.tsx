@@ -1,27 +1,43 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { Movie } from 'types/movie';
+import { BASE_URL } from 'util/requests';
 import './styles.css';
 
 const MovieDetails = () => {
-    return (
-    
+
+  const [ movie, setMovie] = useState<Movie>();
+
+
+  useEffect(() => {
+     axios.get(BASE_URL + "/movies/2")
+   .then(response => {
+     setMovie(response.data);
+   });
+
+  }, []);
+ 
+    return (    
         <div className="movie-details-container">
           <div className="base-card movie-details-card">
             <div className="row">
               <div className="col-xl-6">
                 <div className="img-container">
                   <img
-                    src="https://image.tmdb.org/t/p/w533_and_h300_bestv2/wu1uilmhM4TdluKi2ytfz8gidHf.jpg"
-                    alt="O Retorno do Rei"
+                    src={movie?.imgUrl}
+                    alt={movie?.title}
+                   
                   />
                 </div>
               </div>
               <div className="col-xl-6">
                 <div className="title-subtitle-container">
-                  <h1>O Retorno do Rei</h1>
-                  <h6>2013</h6>
-                  <p>O olho do inimigo está se movendo.</p>
+                  <h1>{movie?.title}</h1>
+                  <h6>{movie?.year}</h6>
+                  <p>{movie?.subTitle}</p>
                 </div>
                 <div className="sinopse-container">
-                  <p>O confronto final entre as forças do bem e do mal que lutam pelo controle do futuro da Terra Média se aproxima. Sauron planeja um grande ataque a Minas Tirith, capital de Gondor, o que faz com que Gandalf e Pippin partam para o local na intenção de ajudar a resistência. Um exército é reunido por Theoden em Rohan, em mais uma tentativa de deter as forças de Sauron. Enquanto isso, Frodo, Sam e Gollum seguem sua viagem rumo à Montanha da Perdição para destruir o anel.</p>
+                  <p>{movie?.synopsis}</p>
                 </div>
               </div>
             </div>
