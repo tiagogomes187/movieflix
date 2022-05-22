@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import qs from 'qs';
 
 type LoginResponse = {
@@ -8,12 +8,12 @@ type LoginResponse = {
   expires_in: number;
   scope: string;
   userId: number;
-}
+};
 
 export const BASE_URL =
   process.env.REACT_APP_BACKEND_URL ?? 'http://localhost:8080';
 
-  const tokenKey = 'authData';
+const tokenKey = 'authData';
 
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID ?? 'movieflix';
 const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET ?? 'movieflix123';
@@ -32,7 +32,24 @@ export const requestBackendLogin = (loginData: LoginData) => {
     ...loginData,
     grant_type: 'password',
   });
-  return axios({method: 'POST', baseURL: BASE_URL, url: '/oauth/token', data, headers});
+  return axios({
+    method: 'POST',
+    baseURL: BASE_URL,
+    url: '/oauth/token',
+    data,
+    headers,
+  });
+};
+
+export const requestBackend = (config: AxiosRequestConfig) => {
+  const headers = config.withCredentials
+    ? {
+        ...config.headers,
+        Authorization: 'Bearer ' + getAuthData().access_token,
+      }
+    : config.headers;
+
+  return axios({ ...config, baseURL: BASE_URL, headers });
 };
 
 export const saveAuthData = (obj: LoginResponse) => {
@@ -40,6 +57,6 @@ export const saveAuthData = (obj: LoginResponse) => {
 };
 
 export const getAuthData = () => {
-  const str = localStorage.getItem(tokenKey) ?? "{}";
+  const str = localStorage.getItem(tokenKey) ?? '{}';
   return JSON.parse(str) as LoginResponse;
-}
+};

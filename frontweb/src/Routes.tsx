@@ -1,4 +1,5 @@
 import Navbar from 'components/Navbar';
+import Admin from 'pages/Admin';
 import Catalog from 'pages/Catalog';
 import Home from 'pages/Home';
 import Auth from 'pages/Home/Auth';
@@ -11,6 +12,10 @@ const Routes = () => (
     <Switch>
       <Route path="/" exact>
         <Home />
+      </Route>
+
+      <Route path="/admin">
+        <Admin/>
       </Route>
 
       <Redirect from="/auth" to="/auth/login" exact/>

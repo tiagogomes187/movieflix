@@ -1,21 +1,35 @@
-import axios from 'axios';
+import  { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { Movie } from 'types/movie';
-import { BASE_URL } from 'util/requests';
+import { requestBackend } from 'util/requests';
 import './styles.css';
+
+type UrlParams = {
+  movieId: string;
+};
 
 const MovieDetails = () => {
 
+  const { movieId } = useParams<UrlParams>();
+
   const [ movie, setMovie] = useState<Movie>();
 
-
   useEffect(() => {
-     axios.get(BASE_URL + "/movies/2")
-   .then(response => {
-     setMovie(response.data);
-   });
+    const params : AxiosRequestConfig ={
+      url: `/movies/${movieId}`,
+      withCredentials: true,
+      params: {
+        page: 0, 
+        size: 12,
+      },
+    };
 
-  }, []);
+    requestBackend(params).then((response) => {
+      setMovie(response.data);
+    });
+  }, [movieId]);
+
  
     return (    
         <div className="movie-details-container">
