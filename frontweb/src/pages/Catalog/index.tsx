@@ -6,9 +6,11 @@ import { Link } from 'react-router-dom';
 import { Movie } from 'types/movie';
 import { SpringPage } from 'types/vendor/spring';
 import { requestBackend } from 'util/requests';
+import CardLoader from './CardLoader';
 
 const Catalog = () => {
   const [page, setPage] = useState<SpringPage<Movie>>();
+  const [isLoading, setIsLoading] = useState(false);
 
   const getMovies = (pageNumber: number) => {
     const params: AxiosRequestConfig = {
@@ -21,9 +23,14 @@ const Catalog = () => {
       },
     };
 
-    requestBackend(params).then((response) => {
-      setPage(response.data);
-    });
+    setIsLoading(true);
+    requestBackend(params)
+      .then((response) => {
+        setPage(response.data);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   useEffect(() => {
@@ -33,19 +40,23 @@ const Catalog = () => {
   return (
     <div className="container my-4">
       <div className="row">
-        {page?.content.map((movie) => (
-          <div className="col-sm-6 col-lg-4 col-xl-3" key={movie.id}>
-            <Link to={`/movies/${movie.id}`}>
-              <MovieCard movie={movie} />
-            </Link>
-          </div>
-        ))}
+        {isLoading ? (
+          <CardLoader/>
+        ) : (
+          page?.content.map((movie) => (
+            <div className="col-sm-6 col-lg-4 col-xl-3" key={movie.id}>
+              <Link to={`/movies/${movie.id}`}>
+                <MovieCard movie={movie} />
+              </Link>
+            </div>
+          ))
+        )}
       </div>
 
       <div className="row">
-        <Pagination 
-          pageCount={page ? page.totalPages : 0} 
-          range={3} 
+        <Pagination
+          pageCount={page ? page.totalPages : 0}
+          range={5}
           onChange={getMovies}
         />
       </div>

@@ -1,4 +1,3 @@
-import Navbar from "components/Navbar"
 import Users from "pages/Home/Auth/User"
 import { Route, Switch } from "react-router-dom"
 

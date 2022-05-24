@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    list-style-type: none;
 }
 
 .pagination-item {
@@ -17,24 +18,45 @@
     justify-content: center;
     align-items: center;
     margin-left: 10px;
+    list-style-type: none;
 }
 
+
+
 .pagination-item.active {
+
     background-color: #FFC700;
 }
 
-.arrow-previews{
-    transform: rotate(-180deg);
+.pagination-link-active {
+
+    background-color: #FFC700;
 }
 
-.arrow-next{
+.arrow-previous {
+
+    transform: rotate(-180deg);
+    color: #FFC700;
+}
+
+.arrow-next {
+
     margin-left: 10px;
+    color: #FFC700;
 }
 
 .arrow-inactive {
-    color: #9E9E9E;
+
+    color: #6C6C6C;
 }
 
 .arrow-active {
+
     color: #FFC700;
+}
+
+.pagination-arrow-container {
+
+    display: flex;
+    align-items: center;
 }
