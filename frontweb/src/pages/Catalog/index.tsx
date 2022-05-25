@@ -19,7 +19,7 @@ const Catalog = () => {
       withCredentials: true,
       params: {
         page: pageNumber,
-        size: 12,
+        size: 6,
       },
     };
 
