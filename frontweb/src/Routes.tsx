@@ -4,10 +4,11 @@ import Catalog from 'pages/Catalog';
 import Home from 'pages/Home';
 import Auth from 'pages/Home/Auth';
 import MovieDetails from 'pages/MovieDetails';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { Router, Redirect, Route, Switch } from 'react-router-dom';
+import history from 'util/history';
 
 const Routes = () => (
-  <BrowserRouter>
+  <Router history={history}>
     <Navbar />
     <Switch>
       <Route path="/" exact>
@@ -31,7 +32,7 @@ const Routes = () => (
         <MovieDetails />
       </Route>
     </Switch>
-  </BrowserRouter>
+  </Router>
 );
 
 export default Routes;
