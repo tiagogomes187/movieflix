@@ -1,5 +1,6 @@
+import PrivateRoute from "components/PrivateRoute";
 import Users from "pages/Home/Auth/User"
-import { Route, Switch } from "react-router-dom"
+import { Switch } from "react-router-dom"
 
 const Admin = () =>{
     return (
@@ -7,9 +8,9 @@ const Admin = () =>{
             
             <div className="admin-content">
                 <Switch>
-                    <Route path="/admin/users">
+                    <PrivateRoute path="/admin/users">
                         <Users/>
-                    </Route>
+                    </PrivateRoute>
                 </Switch>
             </div>
         </div>
