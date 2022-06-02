@@ -1,5 +1,4 @@
 import { ReactComponent as BannerImage } from 'assets/images/banner.svg';
-import { isAuthenticated } from 'util/requests';
 import Login from './Auth/Login';
 
 import './styles.css';
@@ -7,9 +6,6 @@ import './styles.css';
 const Home = () => {
   return (
     <div className="home-container">
-
-<h1>{isAuthenticated() ? 'autenticado' : 'NAO AUTENTICADO'}</h1>
-
       <div className="home-card">
         <div className="home-content-container">
           <h1>Avalie Filmes</h1>
@@ -20,7 +16,7 @@ const Home = () => {
         </div>
       </div>
       <div className="card-login">
-        <Login/>
+        <Login />
       </div>
     </div>
   );

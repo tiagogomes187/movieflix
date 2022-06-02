@@ -11,10 +11,6 @@
   color: #000000;
 }
 
-.menu-sair{
-  margin-right: 10px;
-}
-
 .main-menu {
   display: flex;
   justify-content: center;
@@ -34,16 +30,4 @@
 
 .main-menu a:hover {
   color: #ffffff;
-}
-
-@media (min-width: 576){
-  .menu-sair{
-    margin-right: 23px;
-  }
-}
-
-@media (min-width: 768){
-  .menu-sair{
-    margin-right: 40px;
-  }
 }
