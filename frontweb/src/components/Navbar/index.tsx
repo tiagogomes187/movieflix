@@ -52,10 +52,10 @@ const Navbar = () => {
             <h4>MovieFlix</h4>
           </NavLink>
 
-          <div>
+          <div className="nav-login-logout">
             {authData.authenticated ? (
               <>
-                <span>{authData.tokenData?.user_name}</span>
+                <span className="nav-username">{authData.tokenData?.user_name}</span>
                 <a href="#logout" onClick={handleLogoutClick}>
                   SAIR
                 </a>

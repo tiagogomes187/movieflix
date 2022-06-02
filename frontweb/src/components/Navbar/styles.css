@@ -3,12 +3,13 @@
   padding-left: 18px;
 }
 
-.nav-logo-text h4{
+.nav-logo-text h4 {
   font-size: 24px;
+  color: #000000;
 }
 
 .nav-logo-text:hover {
-  color: #000000;
+  color: #ffffff;
 }
 
 .main-menu {
@@ -30,4 +31,35 @@
 
 .main-menu a:hover {
   color: #ffffff;
+}
+
+.nav-login-logout {
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  padding: 5px 20px;
+  margin-right: 10px;
+}
+
+
+.nav-username {
+  display: none;
+  margin-right: 20px;
+}
+
+@media (min-width: 768px){
+
+  .nav-login-logout {
+    margin-right: 20px;
+  }
+
+  .nav-username {
+    display: unset;
+  }
+}
+
+@media (min-width: 992px){
+  .nav-login-logout {
+    margin-right: 40px;
+  }
 }
