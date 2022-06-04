@@ -2,7 +2,7 @@ import { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
 import { User } from 'types/user';
 import { SpringPage } from 'types/vendor/spring';
-import { requestBackend } from 'util/requests';
+import { hasAnyRoles, requestBackend } from 'util/requests';
 
 const Users = () => {
   const [page, setPage] = useState<SpringPage<User>>();
@@ -24,9 +24,8 @@ const Users = () => {
 
   return (
     <div>
-      {page?.content.map((item) => (
-        <p key={item.id}>{item.email}</p>
-      ))}
+      {hasAnyRoles(['ROLE_MEMBER']) &&
+        page?.content.map((item) => <p key={item.id}>{item.email}</p>)}
     </div>
   );
 };
