@@ -7,12 +7,17 @@ const Admin = () =>{
         <div className="admin-container">
             
             <div className="admin-content">
+                <div>
                 <Switch>
                     <PrivateRoute path="/admin/users" roles={["ROLE_MEMBER"]}>
                         <Users/>
                     </PrivateRoute>
                 </Switch>
+                </div>
+
             </div>
+
+            
         </div>
     )
 }
