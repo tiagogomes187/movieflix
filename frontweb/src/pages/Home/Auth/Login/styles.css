@@ -1,3 +1,42 @@
+.login-container {
+    padding: 20px 10px 33px;
+    font-size: 36px;
+    text-align: left;
+  }
+
+  .login-content-card {
+    display: none;
+    flex-direction: column;
+  
+  }
+  
+  .login-content-container {
+    padding-left: 25px;
+  
+  }
+  
+  .login-content-container h1 {
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .login-content-container p {
+    width: 260px;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 51px;
+  }
+  
+  .login-image-container {
+    padding: 0;
+  
+  }
+  
+  .login-image-container svg {
+    width: 100%;
+    height: auto;
+  }  
+
 .login-card {
     padding: 20px;
     font-size: 16px;
@@ -21,9 +60,34 @@
   }
 
   @media (min-width: 576px){
+
+    .login-container {
+        padding: 40px 48px 241px;
+        font-size: 48px;
+      }
+      .login-content-container {
+        padding-left: 30px;
+      }
+    
+      .login-content-container h1 {
+        width: 370px;
+      }
+    
+      .login-content-container p {
+        width: 320px;
+        font-size: 22px;
+      }
+    
+      .login-image-container svg {
+        width: 380px;
+        height: auto;
+      }
+
+
     .login-card {
         padding: 50px;
     }
+
     .login-card h1 {
         margin-top: 75px;
         margin-bottom: 35px;
@@ -38,6 +102,11 @@
   
 
   @media (min-width: 768px){
+
+    .login-container {
+        padding: 47px 144px 234px;
+      }
+
     .login-card {
         padding: 50px;
     }
@@ -53,7 +122,37 @@
       }
   }
 
+  @media (min-width: 992px) {
+    .login-container {
+      padding: 40px 256px 241px;
+    }
+  }
+
   @media (min-width: 1200px){
+    .login-content-card {
+      display: flex;
+      justify-content: center;
+      margin-right: 149px;
+    
+    }
+    .login-container {
+        padding-top: 38px;
+        padding-bottom: 38px;
+        padding-right: 0;
+        padding-left: 70px;
+        display: flex;
+        flex-direction: row;
+      }
+
+      .login-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 479px;
+        height: 573px;
+      }
+
+
     .login-card h1 {
         margin-top: 20px;
         margin-bottom: 10px;
@@ -64,6 +163,17 @@
 }
 
 @media (min-width: 1400px){
+
+    .login-container {
+        padding-top: 40px;
+        padding-bottom: 38px;
+        padding-right: 0;
+        padding-left: 70px;
+        display: flex;
+        flex-direction: row;
+      }
+
+
     .login-card h1 {
         margin-top: 20px;
         margin-bottom: 10px;

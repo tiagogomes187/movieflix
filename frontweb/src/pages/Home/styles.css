@@ -5,7 +5,7 @@
 }
 
 .home-card {
-  display: none;
+  display: flex;
   flex-direction: column;
 
 }
@@ -37,6 +37,14 @@
   height: auto;
 }
 
+.btn-busca {
+  display: flex;
+  justify-content: center;
+  margin-top: 54px;
+  margin-bottom: 95px;
+ 
+
+}
 @media (min-width: 576px) {
   .home-container {
     padding: 40px 48px 241px;
@@ -60,6 +68,7 @@
     width: 380px;
     height: auto;
   }
+
 }
 
 @media (min-width: 768px) {
@@ -80,8 +89,6 @@
     padding-bottom: 38px;
     padding-right: 0;
     padding-left: 70px;
-    display: flex;
-    flex-direction: row;
   }
 
   .home-card {
@@ -90,12 +97,12 @@
     margin-right: 149px;
   }
 
-  .card-login {
+  .btn-busca {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 479px;
-    height: 573px;
+    justify-content: left;
+
+   
+  
   }
 }
 
@@ -105,20 +112,12 @@
     padding-bottom: 38px;
     padding-right: 0;
     padding-left: 70px;
-    display: flex;
-    flex-direction: row;
+
   }
 
   .home-card {
     display: flex;
     justify-content: center;
     margin-right: 338px;
-  }
-
-  .card-login {
-    display: flex;
-    align-items: center;
-    width: 479px;
-    height: 573px;
   }
 }

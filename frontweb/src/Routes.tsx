@@ -11,7 +11,8 @@ const Routes = () => (
   <Router history={history}>
     <Navbar />
     <Switch>
-      <Route path="/" exact>
+    <Redirect from="/" to="/auth/login" exact/>
+      <Route path="/home" exact>
         <Home />
       </Route>
 

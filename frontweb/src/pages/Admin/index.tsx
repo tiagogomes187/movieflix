@@ -8,7 +8,7 @@ const Admin = () =>{
             
             <div className="admin-content">
                 <Switch>
-                    <PrivateRoute path="/admin/users">
+                    <PrivateRoute path="/admin/users" roles={["ROLE_MEMBER"]}>
                         <Users/>
                     </PrivateRoute>
                 </Switch>

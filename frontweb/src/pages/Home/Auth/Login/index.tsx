@@ -4,6 +4,7 @@ import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, useLocation } from 'react-router-dom';
 import { getTokenData, requestBackendLogin, saveAuthData } from 'util/requests';
+import { ReactComponent as BannerImage } from 'assets/images/banner.svg';
 
 import './styles.css';
 
@@ -49,55 +50,71 @@ const Login = () => {
       });
   };
   return (
-    <div className="base-card login-card">
-      <h1>LOGIN</h1>
-      {hasError && (
-        <div className="alert alert-danger">Erro ao tentar efetuar o login</div>
-      )}
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="mb-4">
-          <input
-            {...register('username', {
-              required: 'Campo obrigatório',
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: 'Email inválido',
-              },
-            })}
-            type="text"
-            className={`form-control base-input ${
-              errors.username ? 'is-invalid' : ''
-            }`}
-            placeholder="Email"
-            name="username"
-          />
-          <div className="invalid-feedback d-block">
-            {errors.username?.message}
+    <>
+      <div className="login-container">
+        <div className="login-content-card">
+          <div className="login-content-container">
+            <h1>Avalie Filmes</h1>
+            <p>Diga o que você achou do seu filme favorito</p>
+          </div>
+          <div className="login-image-container">
+            <BannerImage />
           </div>
         </div>
 
-        <div className="mb-2">
-          <input
-            {...register('password', {
-              required: 'Campo obrigatório',
-            })}
-            type="password"
-            className={`form-control base-input ${
-              errors.password ? 'is-invalid' : ''
-            }`}
-            placeholder="Password"
-            name="password"
-          />
-          <div className="invalid-feedback d-block">
-            {errors.password?.message}
-          </div>
-        </div>
+        <div className="base-card login-card">
+          <h1>LOGIN</h1>
+          {hasError && (
+            <div className="alert alert-danger">
+              Erro ao tentar efetuar o login
+            </div>
+          )}
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="mb-4">
+              <input
+                {...register('username', {
+                  required: 'Campo obrigatório',
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: 'Email inválido',
+                  },
+                })}
+                type="text"
+                className={`form-control base-input ${
+                  errors.username ? 'is-invalid' : ''
+                }`}
+                placeholder="Email"
+                name="username"
+              />
+              <div className="invalid-feedback d-block">
+                {errors.username?.message}
+              </div>
+            </div>
 
-        <div className="login-submit">
-          <ButtonIcon />
+            <div className="mb-2">
+              <input
+                {...register('password', {
+                  required: 'Campo obrigatório',
+                })}
+                type="password"
+                className={`form-control base-input ${
+                  errors.password ? 'is-invalid' : ''
+                }`}
+                placeholder="Password"
+                name="password"
+              />
+              <div className="invalid-feedback d-block">
+                {errors.password?.message}
+              </div>
+            </div>
+
+            <div className="login-submit">
+              <ButtonIcon text="FAZER LOGIN"/>
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
+      </div>
+    </>
   );
 };
 

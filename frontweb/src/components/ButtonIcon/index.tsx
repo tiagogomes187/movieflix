@@ -1,9 +1,13 @@
 import './styles.css';
 
-const ButtonIcon = () =>{
+type Props = {
+    text: string;
+}
+
+const ButtonIcon = ({ text } : Props) =>{
     return (
         <button className="btn btn-primary btn-icon">
-           <h6>FAZER LOGIN</h6>
+           <h6>{text}</h6>
             </button>
     );
 }

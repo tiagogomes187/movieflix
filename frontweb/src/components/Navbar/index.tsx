@@ -35,7 +35,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-md bg-primary main-nav">
         <div className="container-fluid">
           <NavLink
-            to="/"
+            to="/home"
             activeClassName="active"
             exact
             className="nav-logo-text"
