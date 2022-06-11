@@ -61,10 +61,11 @@ const ReviewForm = ({ movieId, onInsertReview }: Props) => {
               />
               <div>{errors.text?.message}</div>
             </div>
-            <div>
-              <ButtonIcon text="SALVAR AVALIAÇÃO" />
+            <div className="btn-avalia-content">
+              <div className="btn-avalia">
+                <ButtonIcon text="SALVAR AVALIAÇÃO" />
+              </div>
             </div>
-            
           </form>
         </div>
       </div>

@@ -44,7 +44,7 @@ const Catalog = () => {
           <CardLoader/>
         ) : (
           page?.content.map((movie) => (
-            <div className="col-sm-6 col-lg-4 col-xl-3" key={movie.id}>
+            <div className="col-sm-6 col-lg-6 col-xl-3" key={movie.id}>
               <Link to={`/movies/${movie.id}`}>
                 <MovieCard movie={movie} />
               </Link>

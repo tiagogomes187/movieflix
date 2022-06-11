@@ -1,4 +1,7 @@
 import { Review } from "types/review";
+import { ReactComponent as StarImage } from 'assets/images/star.svg';
+
+import './styles.css';
 
 
 type ListingReviews = {
@@ -7,14 +10,14 @@ type ListingReviews = {
 
 const ReviewListing = ({ reviews }: ListingReviews) => {
   return (
-    <div className="reviews-container">
+    <div className="base-card reviews-container">
       {reviews?.map((review) => (
         <div className="content-reviews" key={review.id}>
           <div className="listing-review">
             <div className="starImage">
-            <img  src="" alt='' id="starImageId"></img>
+            <StarImage />
             </div>
-            <h3>{review.user.name}</h3>
+            <h6>{review.user.name}</h6>
           </div>
           <div className="review">
             <p>{review.text}</p>

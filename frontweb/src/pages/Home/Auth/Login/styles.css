@@ -171,6 +171,7 @@
         padding-left: 70px;
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
       }
 
 
