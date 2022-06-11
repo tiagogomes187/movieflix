@@ -1,4 +1,5 @@
 import Navbar from 'components/Navbar';
+import PrivateRoute from 'components/PrivateRoute';
 import Admin from 'pages/Admin';
 import Catalog from 'pages/Catalog';
 import Home from 'pages/Home';
@@ -11,27 +12,29 @@ const Routes = () => (
   <Router history={history}>
     <Navbar />
     <Switch>
-    <Redirect from="/" to="/auth/login" exact/>
+      <Redirect from="/" to="/auth/login" exact />
       <Route path="/home" exact>
         <Home />
       </Route>
 
       <Route path="/admin">
-        <Admin/>
+        <Admin />
       </Route>
 
-      <Redirect from="/auth" to="/auth/login" exact/>
+      <Redirect from="/auth" to="/auth/login" exact />
       <Route path="/auth">
         <Auth />
       </Route>
 
-      <Route path="/movies" exact>
-        <Catalog />
-      </Route>
+      <PrivateRoute path="/movies">
+        <Route path="/movies" exact>
+          <Catalog />
+        </Route>
 
-      <Route path="/movies/:movieId">
-        <MovieDetails />
-      </Route>
+        <Route path="/movies/:movieId">
+          <MovieDetails />
+        </Route>
+      </PrivateRoute>
     </Switch>
   </Router>
 );
