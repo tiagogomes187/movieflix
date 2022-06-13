@@ -20,7 +20,7 @@ const Routes = () => (
       <Route path="/admin">
         <Admin />
       </Route>
-
+      
       <Redirect from="/auth" to="/auth/login" exact />
       <Route path="/auth">
         <Auth />

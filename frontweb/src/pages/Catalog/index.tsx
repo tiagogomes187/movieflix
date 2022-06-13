@@ -1,5 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 import MovieCard from 'components/MovieCard';
+import MovieFilter from 'components/MovieFilter';
 import Pagination from 'components/Pagination';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -39,6 +40,7 @@ const Catalog = () => {
 
   return (
     <div className="container my-4">
+      <MovieFilter />
       <div className="row">
         {isLoading ? (
           <CardLoader/>
@@ -56,7 +58,7 @@ const Catalog = () => {
       <div className="row">
         <Pagination
           pageCount={page ? page.totalPages : 0}
-          range={5}
+          range={3}
           onChange={getMovies}
         />
       </div>

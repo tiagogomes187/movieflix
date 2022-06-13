@@ -1,0 +1,16 @@
+.movie-filter-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 15px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.movie-filter-bottom-container{
+    display: flex;
+}
+
+.movie-filter-genre-container{
+    width: 100%;
+}
+
