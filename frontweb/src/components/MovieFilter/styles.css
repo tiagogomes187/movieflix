@@ -3,14 +3,41 @@
     flex-direction: column;
     padding: 5px 15px;
     margin-bottom: 20px;
-    color: #fff;
 }
 
-.movie-filter-bottom-container{
+.movie-filter-bottom-container {
     display: flex;
 }
 
-.movie-filter-genre-container{
+.movie-filter-genre-container {
+    flex: 1;
     width: 100%;
 }
 
+.movie-filter-select__single-value {
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    letter-spacing: -0.015em !important;
+
+    color: #FFFFFF !important;
+
+}
+
+
+.movie-filter-select__control {
+    background-color: unset !important;
+
+}
+
+.movie-filter-select__indicator-separator {
+    display: none;
+
+}
+
+@media (min-width: 576px){
+    .movie-filter-select__control {
+       width: 260px !important;
+    }
+}
