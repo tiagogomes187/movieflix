@@ -14,10 +14,21 @@ type MovieFilterData = {
 const MovieFilter = () => {
   const [selectGenres, setSelectGenres] = useState<Genre[]>([]);
 
-  const { handleSubmit, control } = useForm<MovieFilterData>();
+  const { handleSubmit, control, setValue, getValues } =
+    useForm<MovieFilterData>();
 
   const onSubmit = (formData: MovieFilterData) => {
     console.log('ENVIOU', formData);
+  };
+
+  const handleChangeGenre = (value: Genre) => {
+    setValue('genre', value);
+
+    const obj: MovieFilterData = {
+      genre: getValues('genre'),
+    };
+
+    console.log('ENVIOU', obj);
   };
 
   useEffect(() => {
@@ -40,19 +51,19 @@ const MovieFilter = () => {
               name="genre"
               control={control}
               render={({ field }) => (
-                <Select 
-                {...field} 
-                options={selectGenres} 
-                isClearable
-                placeholder="Gênero"
-                classNamePrefix="movie-filter-select"
-                getOptionLabel={(genre: Genre) => genre.name}
-                getOptionValue={(genre: Genre) => String(genre.id)}
+                <Select
+                  {...field}
+                  options={selectGenres}
+                  isClearable
+                  placeholder="Gênero"
+                  classNamePrefix="movie-filter-select"
+                  onChange={(value) => handleChangeGenre(value as Genre)}
+                  getOptionLabel={(genre: Genre) => genre.name}
+                  getOptionValue={(genre: Genre) => String(genre.id)}
                 />
               )}
             />
           </div>
-
         </div>
       </form>
     </div>
