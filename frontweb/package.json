@@ -22,6 +22,7 @@
     "node-sass": "4.14.1",
     "qs": "^6.10.1",
     "react": "^17.0.2",
+    "react-app-rewired": "^2.2.1",
     "react-content-loader": "^6.0.3",
     "react-currency-input-field": "^3.4.2",
     "react-dom": "^17.0.2",
@@ -31,14 +32,14 @@
     "react-scripts": "4.0.3",
     "react-select": "^5.3.2",
     "react-select-event": "^5.3.0",
-    "react-toastify": "^7.0.4",
+    "react-toastify": "^9.0.4",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "BROWSER='google-chrome-stable' react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false --testPathIgnorePatterns='fixtures.ts'",
+    "start": "BROWSER='google-chrome-stable' react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --watchAll=false --testPathIgnorePatterns='fixtures.ts'",
     "test:watch": "react-scripts test --testPathIgnorePatterns='fixtures.ts'",
     "eject": "react-scripts eject"
   },
